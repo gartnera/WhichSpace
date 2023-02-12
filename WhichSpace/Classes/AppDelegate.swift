@@ -96,6 +96,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
             AppDelegate.darkModeEnabled = false
         }
     }
+    
+    fileprivate func registerCallbackForURLEvents() {
+        
+        let appleEventManager = NSAppleEventManager.shared()
+        
+        appleEventManager.setEventHandler(self, andSelector: #selector(AppDelegate.handleGetURLEvent(event:replyEvent:)), forEventClass: AEEventClass(kInternetEventClass), andEventID: AEEventID(kAEGetURL))
+    }
 
     func applicationWillFinishLaunching(_ notification: Notification) {
         configureApplication()
@@ -103,6 +110,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         configureMenuBarIcon()
         configureSpaceMonitor()
         updateActiveSpaceNumber()
+        registerCallbackForURLEvents()
     }
 
     @objc func updateActiveSpaceNumber() {
@@ -169,5 +177,33 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
     @IBAction func quitClicked(_ sender: NSMenuItem) {
         NSApplication.shared.terminate(self)
+    }
+    
+    // MARK: whichspace:// URL scheme
+    
+    fileprivate func sendCurrentSpaceNumberToKeyboardMaestro() {
+        
+        var currentSpace = -1
+        
+        if let title = self.statusBarItem.button?.title,
+           let spaceNumber = Int(title) {
+            
+            currentSpace = spaceNumber
+        }
+        
+        let kmURL = URL(string: "kmtrigger://macro=CurrentSpace&value=\(currentSpace)")!
+        
+        NSWorkspace().open(kmURL)
+    }
+    
+    @objc func handleGetURLEvent(event: NSAppleEventDescriptor, replyEvent: NSAppleEventDescriptor) {
+        
+        if let urlString = event.paramDescriptor(forKeyword: AEKeyword(keyDirectObject))?.stringValue,
+           let url = URL(string: urlString) {
+            
+            print("WhichSpace activated by url \(url)")
+            
+            sendCurrentSpaceNumberToKeyboardMaestro()
+        }
     }
 }
