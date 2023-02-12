@@ -358,6 +358,7 @@
 				);
 				INFOPLIST_FILE = WhichSpace/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MARKETING_VERSION = 0.3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cdf1982-WhichSpace";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -385,6 +386,7 @@
 				);
 				INFOPLIST_FILE = WhichSpace/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MARKETING_VERSION = 0.3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cdf1982-WhichSpace";
 				PRODUCT_NAME = "$(TARGET_NAME)";
