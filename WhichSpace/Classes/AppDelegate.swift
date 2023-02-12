@@ -98,7 +98,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     }
 
     func applicationWillFinishLaunching(_ notification: Notification) {
-        PFMoveToApplicationsFolderIfNecessary()
         configureApplication()
         configureObservers()
         configureMenuBarIcon()

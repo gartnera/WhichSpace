@@ -11,10 +11,7 @@
 		5E13C88B1BE03A6F00FF4305 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E13C88A1BE03A6F00FF4305 /* AppDelegate.swift */; };
 		5E13C88D1BE03A6F00FF4305 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E13C88C1BE03A6F00FF4305 /* Assets.xcassets */; };
 		5E13C8901BE03A6F00FF4305 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E13C88E1BE03A6F00FF4305 /* MainMenu.xib */; };
-		5E51B77F1E7EE562009395E6 /* PFMoveApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E51B77E1E7EE562009395E6 /* PFMoveApplication.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5E51B7811E7EE64C009395E6 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E51B7801E7EE64C009395E6 /* Security.framework */; };
-		5E51B7841E7EE7BF009395E6 /* LetsMove.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EEAD20F1E7EE523003BB305 /* LetsMove.framework */; };
-		5E51B7851E7EE7BF009395E6 /* LetsMove.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5EEAD20F1E7EE523003BB305 /* LetsMove.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +21,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5E51B7851E7EE7BF009395E6 /* LetsMove.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,11 +34,8 @@
 		5E13C88C1BE03A6F00FF4305 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E13C88F1BE03A6F00FF4305 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		5E13C8911BE03A6F00FF4305 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5E51B77D1E7EE562009395E6 /* PFMoveApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFMoveApplication.h; sourceTree = "<group>"; };
-		5E51B77E1E7EE562009395E6 /* PFMoveApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFMoveApplication.m; sourceTree = "<group>"; };
 		5E51B7801E7EE64C009395E6 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		5EC84D821BEFB9FC00829140 /* NSStatusBarButtonCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSStatusBarButtonCell.h; sourceTree = "<group>"; };
-		5EEAD20F1E7EE523003BB305 /* LetsMove.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LetsMove.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +44,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E51B7811E7EE64C009395E6 /* Security.framework in Frameworks */,
-				5E51B7841E7EE7BF009395E6 /* LetsMove.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,7 +83,6 @@
 			isa = PBXGroup;
 			children = (
 				5E51B7801E7EE64C009395E6 /* Security.framework */,
-				5EEAD20F1E7EE523003BB305 /* LetsMove.framework */,
 			);
 			name = Frameworks;
 			path = WhichSpace/Frameworks;
@@ -100,8 +91,6 @@
 		5EC84D811BEFB80900829140 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				5E51B77D1E7EE562009395E6 /* PFMoveApplication.h */,
-				5E51B77E1E7EE562009395E6 /* PFMoveApplication.m */,
 				5E13C88A1BE03A6F00FF4305 /* AppDelegate.swift */,
 				5EC84D821BEFB9FC00829140 /* NSStatusBarButtonCell.h */,
 				3AE480051BE3516200E22248 /* StatusItemCell.swift */,
@@ -210,7 +199,6 @@
 			files = (
 				5E13C88B1BE03A6F00FF4305 /* AppDelegate.swift in Sources */,
 				3AE480061BE3516200E22248 /* StatusItemCell.swift in Sources */,
-				5E51B77F1E7EE562009395E6 /* PFMoveApplication.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

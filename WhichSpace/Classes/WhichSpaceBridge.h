@@ -12,7 +12,6 @@
 #import <Foundation/Foundation.h>
 
 #import "NSStatusBarButtonCell.h"
-#import "PFMoveApplication.h"
 
 int _CGSDefaultConnection();
 id CGSCopyManagedDisplaySpaces(int conn);
