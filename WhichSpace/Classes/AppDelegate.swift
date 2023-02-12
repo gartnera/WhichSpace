@@ -7,17 +7,15 @@
 //
 
 import Cocoa
-import Sparkle
 
 @NSApplicationMain
 @objc
-class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, SUUpdaterDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
     @IBOutlet weak var window: NSWindow!
     @IBOutlet weak var statusMenu: NSMenu!
     @IBOutlet weak var application: NSApplication!
     @IBOutlet weak var workspace: NSWorkspace!
-    @IBOutlet weak var updater: SUUpdater!
 
     let mainDisplay = "Main"
     let spacesMonitorFile = "~/Library/Preferences/com.apple.spaces.plist"
@@ -63,13 +61,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, SUUpdaterDel
         statusBarItem.menu = statusMenu
     }
 
-    fileprivate func configureSparkle() {
-        updater = SUUpdater.shared()
-        updater.delegate = self
-        // Silently check for updates on launch
-        updater.checkForUpdatesInBackground()
-    }
-
     fileprivate func configureSpaceMonitor() {
         let fullPath = (spacesMonitorFile as NSString).expandingTildeInPath
         let queue = DispatchQueue.global(qos: .default)
@@ -111,7 +102,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, SUUpdaterDel
         configureApplication()
         configureObservers()
         configureMenuBarIcon()
-        configureSparkle()
         configureSpaceMonitor()
         updateActiveSpaceNumber()
     }
@@ -176,10 +166,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, SUUpdaterDel
         if let cell = statusBarItem.button?.cell as! StatusItemCell? {
             cell.isMenuVisible = false
         }
-    }
-
-    @IBAction func checkForUpdatesClicked(_ sender: NSMenuItem) {
-        updater.checkForUpdates(sender)
     }
 
     @IBAction func quitClicked(_ sender: NSMenuItem) {
